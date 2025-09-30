@@ -222,7 +222,7 @@
                         <p class="mb-2">Balai Desa Tlompakan</p>
                         <p class="mb-2">Kecamatan Tuntang, Kabupaten Semarang</p>
                         <p class="mb-2">Jawa Tengah, Indonesia</p>
-                        <p class="mb-2">Email: desatlompakan@example.com</p>
+                        <p class="mb-2">Email: nobbplayer86@gmail.com</p>
                         <p>Telepon: +62 24 1234567</p>
                     </address>
                 </div>
@@ -238,12 +238,35 @@
     </footer>
 
     <!-- Script untuk Mobile Menu -->
+    <button id="backToTop" class="hidden fixed bottom-6 right-6 bg-red-500 text-white p-3 rounded-full shadow-lg hover:bg-red-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+    </button>
     <script>
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
+        // Back to Top
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            backToTopBtn.classList.remove('hidden');
+          } else {
+            backToTopBtn.classList.add('hidden');
+          }
         });
-    </script>
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      
+        // Mobile Menu Toggle (versi struktur-organisasi.html)
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+      
+        if (menuBtn && mobileMenu) {
+          menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+          });
+        }
+      </script>
+      
 </body>
 </html>
