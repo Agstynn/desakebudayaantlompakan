@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Galeri Lengkap Desa Tlompakan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fafb; /* bg-gray-50 */
+        }
+        .cursor-pointer {
+            cursor: pointer;
+        }
+        /* Modal styles */
+        #modal {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="gambar/logotlompaan.jpeg" alt="Logo Desa Tlompakan" class="h-10 mr-2" />
+                    <h1 class="text-xl font-bold text-gray-800">Desa Tlompakan</h1>
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-8" id="main-nav">
+                <a href="index.html#beranda" class="text-gray-700 hover:text-red-700 font-medium">Beranda</a>
+                <a href="index.html#tentang" class="text-gray-700 hover:text-red-700 font-medium">Tentang</a>
+                <a href="index.html#kesenian" class="text-gray-700 hover:text-red-700 font-medium">Kesenian</a>
+                <a href="index.html#budaya" class="text-gray-700 hover:text-red-700 font-medium">Budaya</a>
+                <a href="galeri-lengkap.html" class="text-red-700 font-semibold active-nav">Galeri</a>
+                <a href="berita.html" class="text-gray-700 hover:text-red-700 font-medium">Berita & Aktivitas</a>
+                <a href="struktur-organisasi.html" class="text-gray-700 hover:text-red-700 font-medium">Struktur Organisasi</a>
+            </nav>
+            <!-- Hamburger for mobile -->
+            <button id="menu-toggle" class="md:hidden text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <nav id="mobile-nav" class="max-h-0 overflow-hidden flex-col bg-white shadow-md md:hidden absolute top-16 left-0 w-full z-40 transition-all duration-300 ease-in-out">
+            <a href="index.html#beranda" class="px-4 py-2 border-b text-gray-700 hover:bg-gray-100">Beranda</a>
+            <a href="index.html#tentang" class="px-4 py-2 border-b text-gray-700 hover:bg-gray-100">Tentang</a>
+            <a href="index.html#kesenian" class="px-4 py-2 border-b text-gray-700 hover:bg-gray-100">Kesenian</a>
+            <a href="index.html#budaya" class="px-4 py-2 border-b text-gray-700 hover:bg-gray-100">Budaya</a>
+            <a href="galeri-lengkap.html" class="px-4 py-2 border-b text-red-700 font-semibold">Galeri</a>
+            <a href="berita.html" class="px-4 py-2 border-b text-gray-700 hover:bg-gray-100">Berita</a>
+            <a href="struktur-organisasi.html" class="px-4 py-2 border-b text-gray-700 hover:bg-gray-100">Struktur Organisasi</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-20 pb-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Galeri Lengkap Desa Tlompakan</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Potret lengkap kehidupan dan aktivitas seni budaya Desa Tlompakan</p>
+                <div class="w-20 h-1 bg-red-600 mx-auto mt-4"></div>
+            </div>
+    
+            <!-- Grid Galeri -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Item 1 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/IMG-20250720-WA0037.jpg', 'Melatih anak-anak generasi penerus musik karawitan')">
+                    <img src="gambar/IMG-20250720-WA0037.jpg" alt="Melatih anak-anak generasi penerus musik karawitan" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Melatih anak-anak generasi penerus musik karawitan
+                    </div>
+                </div>
+    
+                <!-- Item 2 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/selametan.jpg', 'Suasana prosesi selametan untuk merti dusun')">
+                    <img src="gambar/selametan.jpg" alt="Suasana prosesi selametan untuk merti dusun" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Suasana prosesi selametan untuk merti dusun
+                    </div>
+                </div>
+    
+                <!-- Item 3 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/Ramawijaya_dan_Shinta.jpg', 'Pertunjukkan seni tari')">
+                    <img src="gambar/Ramawijaya_dan_Shinta_pada_Sendratari_Ramayana_Prambanan.jpg" alt="Pertunjukkan seni tari" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Pertunjukkan seni tari
+                    </div>
+                </div>
+    
+                <!-- Item 4 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/pagelaran2.jpg', 'Karawitan Langen Madyo laras sedang melaksanakan pentas dalam acara merti dusun Muludan')">
+                    <img src="gambar/pagelaran2.jpg" alt="Karawitan Langen Madyo laras sedang melaksanakan pentas dalam acara merti dusun Muludan" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Karawitan Langen Madyo laras sedang melaksanakan pentas dalam acara merti dusun Muludan
+                    </div>
+                </div>
+    
+                <!-- Item 5 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/gambar5.jpg', 'Kegiatan gotong royong warga desa')">
+                    <img src="gambar/tawukali.jpeg" alt="Kegiatan Tawu kali" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Kegiatan tawu kali yg dilaksanakan bersama-sama oleh warga desa tlompakan
+                    </div>
+                </div>
+    
+                <!-- Item 6 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/gambar6.jpg', 'Anak-anak bermain di balai desa')">
+                    <img src="gambar/viewtlompakan.jpg" alt="Pemandangan Indah Desa Tlompakan" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Pemandangan Indah Desa Tlompakan
+                    </div>
+                </div>
+    
+                <!-- Item 7 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/gambar7.jpg', 'Tarian tradisional khas desa')">
+                    <img src="gambar/sungaitlompakan.jpg" alt="Salah satu sungai desa tlompakan " class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Prosesi dawuhan sekaligus pemandangan sungai pada desa Tlompakan
+                    </div>
+                </div>
+    
+                <!-- Item 8 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/gambar8.jpg', 'Kesenian karawitan anak-anak')">
+                    <img src="gambar/perkembangan-tari-jaranan-1.jpg" alt="Kesenian tarian prajuritan jarananan anak-anak" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Kesenian tarian prajuritan jarananan anak-anak Desa Tlompakan
+                    </div>
+                </div>
+    
+                <!-- Item 9 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/gambar9.jpg', 'Kegiatan ibu-ibu PKK')">
+                    <img src="gambar/prosesidwhn2.jpg" alt="Dawuhan" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Kegiatan warga melaksankan Dawuhan
+                    </div>
+                </div>
+    
+                <!-- Item 10 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/gambar10.jpg', 'Prosesi kirab budaya desa')">
+                    <img src="gambar/nyaddran.jpg" alt="suasana saat Nyadran" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Suasana desa saat melakukan nyadran
+                    </div>
+                </div>
+    
+                <!-- Item 11 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/gambar11.jpg', 'Latihan gamelan bersama')">
+                    <img src="gambar/mertidusun.jpeg" alt="Foto bersama Tim PPKORMAWA dan Tim Karawitan" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Foto bersama PPKORMAWA UNW & Pelaku kesenian Langen Madya Laras sebelum pentas 
+                    </div>
+                </div>
+    
+                <!-- Item 12 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/gambar12.jpg', 'Kegiatan belajar anak-anak desa')">
+                    <img src="gambar/lesung.jpg" alt="Kegiatan latihan Ibu-ibu Desa Tlompakan memainkan lesung" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Kegiatan latihan Ibu-ibu Desa Tlompakan memainkan lesung yg dipadukan bersama alunan gending/lagu
+                    </div>
+                </div>
+    
+                <!-- Item 13 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/gambar13.jpg', 'Suasana pasar tradisional desa')">
+                    <img src="gambar/latihankarawitan.jpeg" alt="latihan ngerawit" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Suasana Latihan anak-anak desa Tlompakan memainkan gamelan guna melestarikan budaya & adat jawa
+                    </div>
+                </div>
+    
+                <!-- Item 14 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/gambar14.jpg', 'Pementasan seni wayang kulit')">
+                    <img src="gambar/klotekanlesung.jpeg" alt="Dokumentasi Penampilan Ibu-ibu Desa Tlompakan" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Dokumentasi Penampilan Ibu-ibu Desa Tlompakan memainkan musik lesung
+                    </div>
+                </div>
+    
+                <!-- Item 15 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/gambar15.jpg', 'Arak-arakan gunungan hasil bumi')">
+                    <img src="gambar/klotekanlesung2.jpeg" alt="Dokumentasi" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Dokumentasi Penampilan Ibu-ibu Desa Tlompakan memainkan musik lesung
+                    </div>
+                </div>
+    
+                <!-- Item 16 -->
+                <div class="cursor-pointer group relative overflow-hidden rounded-lg shadow-lg" onclick="openModal('gambar/gambar16.jpg', 'Lomba tradisional anak-anak')">
+                    <img src="gambar/jaranan.jpeg" alt="Latihan tari jaranan" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 rounded-lg" />
+                    <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold text-center p-2">
+                        Suasana latihan tari prajuritan jaranan oleh anak-anak Desa Tlompakan
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Modal Lightbox -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
+        <div class="relative max-w-4xl w-full mx-4">
+            <button onclick="closeModal()" class="absolute top-2 right-2 text-white text-3xl font-bold hover:text-red-500">&times;</button>
+            <img id="modal-img" src="" alt="" class="w-full rounded-lg shadow-lg" />
+            <p id="modal-caption" class="text-white text-center mt-4"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 pt-12 pb-6 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Desa Tlompakan</h3>
+                    <p class="mb-4">Melestarikan warisan seni dan budaya Nusantara untuk generasi mendatang.</p>
+                    <div class="flex space-x-4">
+                        <!-- Social icons -->
+                        <a href="#" class="text-gray-400 hover:text-white" aria-label="Facebook">
+                            <!-- Facebook SVG -->
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" aria-label="Instagram">
+                            <!-- Instagram SVG -->
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" aria-label="Twitter">
+                            <!-- Twitter SVG -->
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white" aria-label="GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 
+                                2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 
+                                0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343
+                                -.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 
+                                1.003.07 1.531 1.032 1.531 1.032.892 1.529 
+                                2.341 1.088 2.91.833.092-.647.35-1.088.636-1.338
+                                -2.22-.253-4.555-1.113-4.555-4.951 
+                                0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 
+                                0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 
+                                1.705.115 2.504.337 1.909-1.296 2.748-1.026 
+                                2.748-1.026.546 1.378.203 2.397.1 2.65.64.7 
+                                1.028 1.595 1.028 2.688 0 3.848-2.338 
+                                4.695-4.566 4.943.36.309.678.92.678 
+                                1.855 0 1.338-.012 2.419-.012 2.747 
+                                0 .268.18.58.688.482A10.017 10.017 0 0022 
+                                12.017C22 6.484 17.523 2 12 2z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        // Toggle Mobile Menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        menuToggle.addEventListener('click', () => {
+            if (mobileNav.classList.contains('max-h-0')) {
+                mobileNav.classList.remove('max-h-0');
+                mobileNav.classList.add('max-h-screen');
+            } else {
+                mobileNav.classList.add('max-h-0');
+                mobileNav.classList.remove('max-h-screen');
+            }
+        });
+
+        // Modal Functions
+        function openModal(src, caption) {
+            document.getElementById('modal').classList.remove('hidden');
+            document.getElementById('modal-img').src = src;
+            document.getElementById('modal-caption').textContent = caption;
+        }
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>
