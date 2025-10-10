@@ -77,18 +77,19 @@
         
     </header>
 
-    <!-- Hero Section -->
-    <section id="beranda" class="relative h-screen pt-16 flex items-center justify-center">
-        <img src="gambar/viewtlompakan.jpg" alt="Panorama Desa, rawa yg berada di kecamatan tsb" class="absolute inset-0 w-full h-full object-cover">
-        <div class="hero-overlay absolute inset-0"></div>
-        <div class="container mx-auto px-4 z-10 text-center text-white">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Desa Tlompakan</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Pelestari Seni dan Budaya Nusantara yang Tetap Berdenyut di Era Modern</p>
-            <button class="bg-[#8B0000] hover:bg-[#6B0000] text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                Jelajahi Desa
-            </button>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section id="beranda" class="relative h-screen pt-16 flex items-center justify-center">
+    <img src="gambar/viewtlompakan.jpg" alt="Panorama Desa, rawa yg berada di kecamatan tsb" class="absolute inset-0 w-full h-full object-cover">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="container mx-auto px-4 z-10 text-center text-white">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Desa Tlompakan</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Pelestari Seni dan Budaya Nusantara yang Tetap Berdenyut di Era Modern</p>
+        <a href="#kesenian" onclick="scrollToSection('kesenian'); return false;" class="inline-block bg-[#8B0000] hover:bg-[#6B0000] text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+            Jelajahi Desa
+        </a>
+    </div>
+</section>
+
 
     <!-- Tentang Desa -->
     <section id="tentang" class="py-20 bg-white">
@@ -294,18 +295,19 @@ khususnya anak-anak, serta dokumentasi kegiatan secara profesional.
           <img src="gambar/ngumbahjaran.jpg" alt="Tradisi 7" class="w-full rounded-lg mt-4">
         </div>
   
-        <!-- Item 8 -->
+        <!-- Kesenian Rodat -->
         <div class="bg-gray-50 rounded-lg p-8">
-          <h3 class="text-xl font-semibold mb-2 text-gray-800"></h3>
-          <p class="text-gray-600">.</p>
-          <img src="" alt="Tradisi 8" class="w-full rounded-lg mt-4">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Rodat</h3>
+          <p class="text-gray-600">Rodat adalah kesenian tradisional berupa gerakan tari atau atraksi yang berkembang di dusun Semen Ds.Tlompakan dan berfungsi sebagai 
+            hiburan sekaligus media dakwah yg sangat interaktif dan eksotis.</p>
+          <img src="gambar/Tari_Rodat.jpg" alt="Ilustrasi Kesenian Rodat" class="w-full rounded-lg mt-4">
         </div>
   
-        <!-- Item 9 -->
+        <!-- Reog Sombron -->
         <div class="bg-gray-50 rounded-lg p-8">
-          <h3 class="text-xl font-semibold mb-2 text-gray-800"></h3>
-          <p class="text-gray-600">.</p>
-          <img src="" alt="Tradisi 9" class="w-full rounded-lg mt-4">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Langen Budi Sedyo Utomo</h3>
+          <p class="text-gray-600">Langen Budi Sedyo Utomo sendiri adalah salah satu kelompok pelaku kesenian jaranan yg berasal dari desa Tlompakann Tuntang Jawa Tengah.</p>
+          <img src="gambar/LBSU.JPG" alt="Langen Budi Sedyo Utomo" class="w-full rounded-lg mt-4">
         </div>
       </div>
     </div>
@@ -323,7 +325,7 @@ khususnya anak-anak, serta dokumentasi kegiatan secara profesional.
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <img src="gambar/anak anak berlatih.jpg" alt="Melatih anak-anak generasi penerus musik karawitan" class="w-full h-48 object-cover rounded-lg">
                 <img src="gambar/Merti-Bumi3.jpeg" alt="Suasana desa saat merti dusun" class="w-full h-48 object-cover rounded-lg">
-                <img src="gambar/Ramawijaya_dan_Shinta_pada_Sendratari_Ramayana_Prambanan.jpg" alt="pertunjukkan seni tari" class="w-full h-48 object-cover rounded-lg">
+                <img src="gambar/LBSU2.JPG" alt="pertunjukkan seni tari Langen Budi Sedyo Utomo" class="w-full h-48 object-cover rounded-lg">
                 <img src="gambar/pagelaran2.jpg" alt="Karawitan Langen Madyo laras sedang melaksankan pentas dalam acr merti dusun Muludan" class="w-full h-48 object-cover rounded-lg">
                 <img src="gambar/tari-jaranan-1.jpg" alt="Pertunjukan tari prajuritan jaranan" class="w-full h-48 object-cover rounded-lg">
                 <img src="gambar/prosesidwhn.jpg" alt="Proses memasak ayam bakar untuk selametan atau dawuhan" class="w-full h-48 object-cover rounded-lg">
@@ -403,7 +405,6 @@ khususnya anak-anak, serta dokumentasi kegiatan secara profesional.
         // Back to Top Button
         const backToTopBtn = document.getElementById('backToTop');
         
-        
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopBtn.classList.remove('hidden');
@@ -415,26 +416,63 @@ khususnya anak-anak, serta dokumentasi kegiatan secara profesional.
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-
-        // Mobile menu toggle would go here
+    
+        // Mobile menu toggle
         const menuToggle = document.getElementById('menu-toggle');
         const mobileNav = document.getElementById('mobile-nav');
-
+    
         if (menuToggle && mobileNav) {
             menuToggle.addEventListener('click', () => {
-        if (mobileNav.classList.contains('max-h-0')) {
-            mobileNav.classList.remove('max-h-0');
-            mobileNav.classList.add('max-h-screen');
-        } else {
-            mobileNav.classList.remove('max-h-screen');
-            mobileNav.classList.add('max-h-0');
+                if (mobileNav.classList.contains('max-h-0')) {
+                    mobileNav.classList.remove('max-h-0');
+                    mobileNav.classList.add('max-h-screen');
+                } else {
+                    mobileNav.classList.remove('max-h-screen');
+                    mobileNav.classList.add('max-h-0');
+                }
+            });
         }
-    });
-}
-
-
-
+    
+        // Fungsi Scroll Otomatis ke Section (BARU - Tambahan untuk tombol Jelajahi Desa)
+        function scrollToSection(sectionId) {
+            console.log('Scrolling to:', sectionId); // Debug: Cek di Console apakah fungsi dipanggil
+            
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const headerHeight = 80; // Tinggi header fixed (sesuaikan jika beda)
+                const offsetTop = section.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth' // Smooth scroll otomatis
+                });
+                
+                // Optional: Tutup mobile menu jika terbuka (untuk UX mobile)
+                if (mobileNav && !mobileNav.classList.contains('max-h-0')) {
+                    mobileNav.classList.remove('max-h-screen');
+                    mobileNav.classList.add('max-h-0');
+                }
+            } else {
+                console.error('Section not found:', sectionId); // Debug jika ID salah
+            }
+        }
+    
+        // Optional: Tambah event listener untuk semua anchor links (agar smooth scroll di seluruh situs)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
+    
 </body>
 </html>
 
