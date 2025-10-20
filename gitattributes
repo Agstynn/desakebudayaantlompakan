@@ -1,0 +1,32 @@
+# ==============================
+# Pengaturan Line Endings & File Web
+# ==============================
+
+# Gunakan LF untuk semua file teks agar konsisten lintas OS
+* text=auto eol=lf
+
+# Tentukan format line endings spesifik untuk beberapa jenis file
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+
+# File biner (jangan ubah line endings)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.exe binary
+
+# File Windows batch
+*.bat text eol=crlf
+
+# File shell Linux/macOS
+*.sh text eol=lf
